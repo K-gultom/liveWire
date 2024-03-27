@@ -31,11 +31,11 @@ class Todo extends Component
         $validate = $this->validate($rules, $pesan);
         ModelsTodo::create($validate);
 
-        dd($this->title);
+        // dd($this->title);
         // dd($this->tanggal);
         // dd($this->description); 
 
-        session()->flash('message_todo', 'Data berhasil dimasukkan!');
+        session()->flash('msg', 'Data berhasil dimasukkan!');
     }
 
 

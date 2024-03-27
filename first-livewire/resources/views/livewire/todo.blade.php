@@ -11,10 +11,10 @@
         </div>
     @endif
 
-    @if (session()->has('message_todo'))
+    @if (session()->has('msg'))
         <div class="pt-3">
             <div class="alert alert-success">
-                {{ session('message_todo') }}
+                {{ session('msg') }}
             </div>
         </div>
     @endif
@@ -43,7 +43,7 @@
             <div class="mb-3 row">
                 <label class="col-sm-2 form-label"></label>
                 <div class="col-sm-10">
-                    <button class="btn-primary btn" wire:submit="store()">Simpan Todo</button>
+                    <button class="btn-primary btn" type="button" wire:click="store()">Simpan Todo</button>
                 </div>
             </div>
         </form>
