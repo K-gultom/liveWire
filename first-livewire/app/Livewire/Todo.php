@@ -41,8 +41,12 @@ class Todo extends Component
 
     public function render()
     {
+
+        $getData = ModelsTodo::paginate(2);
         
-        return view('livewire.todo');
+        return view('livewire.todo', 
+            ['data'=>$getData]
+        );
         
     }
 }

@@ -119,7 +119,6 @@ class Employee extends Component
 
     public function render()
     {
-
         if ($this->katakunci != null) {
 
             $data = ModelsEmployee::where('nama', 'like', '%' . $this->katakunci . '%' )

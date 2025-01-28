@@ -91,6 +91,7 @@
                         <td>{{ $value->alamat }}</td>
                         <td>
                             <a wire:click="edit({{ $value->id}})" class="btn btn-warning btn-sm">Edit</a>
+                            
                             <a wire:click="delete_confirmation({{ $value->id }})" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">Del</a>
                         </td>
                     </tr>
@@ -99,6 +100,7 @@
         </table>
         {{ $dataEmployees->links() }}
     </div>
+    
     <!-- AKHIR DATA -->
     <div wire:ignore.self class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">

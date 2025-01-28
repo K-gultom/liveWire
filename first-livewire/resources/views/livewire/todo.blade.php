@@ -48,4 +48,38 @@
             </div>
         </form>
     </div>
+
+    <div class="my-3 p-3 bg-body rounded shadow-sm">
+        {{ $data->links() }}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th class="col-md-1">No</th>
+                    <th class="col">Title</th>
+                    <th class="col-md-3">Tanggal</th>
+                    <th class="col-md-3">Desc</th>
+                    <th class="col-md-2">Aksi</th>
+                </tr>
+            </thead>
+            
+            
+            <tbody>
+                @foreach ($data as $key => $value)
+                    <tr>
+                        <td>{{ $data->firstItem() + $key}}</td>
+                        <td>{{ $value->title }}</td>
+                        <td>{{ \Carbon\Carbon::parse($value->tanggal)->format('d/m/Y') }}</td>
+                        <td>{{ $value->description }}</td>
+                        <td>
+                            <a wire:click="edit({{ $value->id}})" class="btn btn-warning btn-sm">Edit</a>
+                            <a wire:click="delete_confirmation({{ $value->id }})" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">Del</a>
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+        {{ $data->links() }}
+    </div>
+
+
 </div>
